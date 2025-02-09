@@ -32,6 +32,7 @@ All you have to do to install our snippets is to copy and paste the code found m
 23. KS Media Slider
 23. KS Pricing Plans
 24. KS Fancy Slideshow
+25. KS Age Verification
 
 ## Learn more / Download
 https://www.kondasoft.com/collections/shopify-snippets
