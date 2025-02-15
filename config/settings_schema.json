@@ -1465,5 +1465,233 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "KS - Cart Upsells",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "ks_cart_upsells_collection",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "ks_cart_upsells_limit",
+        "label": "Limit products",
+        "min": 2,
+        "max": 24,
+        "default": 8
+      },
+      {
+        "type": "text",
+        "id": "ks_cart_upsells_title",
+        "label": "Title",
+        "default": "You might like..."
+      },
+      {
+        "type": "select",
+        "id": "ks_cart_upsells_title_font_size",
+        "label": "Title size",
+        "options": [
+          { "value": "h1", "label": "H1" },
+          { "value": "h2", "label": "H2" },
+          { "value": "h3", "label": "H3" },
+          { "value": "h4", "label": "H4" },
+          { "value": "h5", "label": "H5" },
+          { "value": "h6", "label": "H6" }
+        ],
+        "default": "h3"
+      },
+      {
+        "type": "text_alignment",
+        "id": "ks_cart_upsells_title_text_align",
+        "label": "Title text-align",
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "ks_cart_upsells_btn_style",
+        "label": "Button style",
+        "options": [
+          { "value": "button--primary", "label": "Primary" },
+          { "value": "button--secondary", "label": "Secondary" }
+        ],
+        "default": "button--secondary"
+      },
+    ]
+  },
+  {
+    "name": "KS - Cart Goal",
+    "settings": [
+      {
+        "type": "color",
+        "id": "ks_cart_goal_color",
+        "label": "Color",
+        "default": "#334fb4"
+      },
+      {
+        "type": "range",
+        "id": "ks_cart_goal_progress_height",
+        "label": "Progress bar height",
+        "min": 1,
+        "max": 16,
+        "default": 8,
+        "unit": "px"
+      },
+      {
+        "type": "richtext",
+        "id": "ks_cart_goal_desc_completed",
+        "label": "Description - All goals are completed",
+        "default": "<p>Congrats! You're eligible for <strong>ALL OFFERINGS.<\/strong><\/p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "ks_cart_goal_confetti",
+        "label": "Show confetti animation",
+        "info": "It will show after a goal is completed",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Goal 1"
+      },
+      {
+        "type": "textarea",
+        "id": "ks_cart_goal_goal_one_value",
+        "label": "Goal value",
+        "info": "Comma-separated list of currencies with their respective goal value. E.g USD:100, EUR:90. Leave empty to disable",
+        "default": "USD:100, EUR:90, GBP:80"
+      },
+      {
+        "type": "text",
+        "id": "ks_cart_goal_goal_one_title",
+        "label": "Title",
+        "default": "Free Shipping"
+      },
+      {
+        "type": "select",
+        "id": "ks_cart_goal_goal_one_icon",
+        "label": "Icon",
+        "default": "truck",
+        "options": [
+          { "value": "award", "label": "Award" },
+          { "value": "smile", "label": "Smile" },
+          { "value": "star", "label": "Star" },
+          { "value": "percent", "label": "Percent" },
+          { "value": "truck", "label": "Truck" },
+          { "value": "gift", "label": "Gift" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "cart", "label": "Cart" }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "ks_cart_goal_goal_one_desc",
+        "label": "Description",
+        "default": "<p>You're <strong>[amount]<\/strong> away from <strong>FREE SHIPPING!<\/strong><\/p>",
+      },
+      {
+        "type": "header",
+        "content": "Goal 2"
+      },
+      {
+        "type": "textarea",
+        "id": "ks_cart_goal_goal_two_value",
+        "label": "Goal value",
+        "info": "Comma-separated list of currencies with their respective goal value. E.g USD:100, EUR:90. Leave empty to disable",
+         "default": "USD:200, EUR:180, GBP:260"
+      },
+      {
+        "type": "text",
+        "id": "ks_cart_goal_goal_two_title",
+        "label": "Title",
+        "default": "Free Gift"
+      },
+      {
+        "type": "select",
+        "id": "ks_cart_goal_goal_two_icon",
+        "label": "Icon",
+        "default": "gift",
+        "options": [
+          { "value": "award", "label": "Award" },
+          { "value": "smile", "label": "Smile" },
+          { "value": "star", "label": "Star" },
+          { "value": "percent", "label": "Percent" },
+          { "value": "truck", "label": "Truck" },
+          { "value": "gift", "label": "Gift" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "cart", "label": "Cart" }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "ks_cart_goal_goal_two_desc",
+        "label": "Description",
+        "default": "<p>You're <strong>[amount]<\/strong> away from a <strong>FREE GIFT!<\/strong><\/p>"
+      },
+      {
+        "type": "header",
+        "content": "Goal 3"
+      },
+      {
+        "type": "textarea",
+        "id": "ks_cart_goal_goal_three_value",
+        "label": "Goal value",
+        "info": "Comma-separated list of currencies with their respective goal value. E.g USD:100, EUR:90. Leave empty to disable",
+        "default": "USD:300, EUR:270, GBP:240"
+      },
+      {
+        "type": "text",
+        "id": "ks_cart_goal_goal_three_title",
+        "label": "Title",
+        "default": "30% Off"
+      },
+      {
+        "type": "select",
+        "id": "ks_cart_goal_goal_three_icon",
+        "label": "Icon",
+        "default": "percent",
+        "options": [
+          { "value": "award", "label": "Award" },
+          { "value": "smile", "label": "Smile" },
+          { "value": "star", "label": "Star" },
+          { "value": "percent", "label": "Percent" },
+          { "value": "truck", "label": "Truck" },
+          { "value": "gift", "label": "Gift" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "cart", "label": "Cart" }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "ks_cart_goal_goal_three_desc",
+        "label": "Description",
+        "default": "<p>You're <strong>[amount]<\/strong> away from <strong>30% OFF!<\/strong><\/p>"
+      }, 
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "ks_cart_goal_pt",
+        "label": "Top",
+        "min": 0,
+        "max": 32,
+        "step": 1,
+        "default": 12,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ks_cart_goal_pb",
+        "label": "Bottom",
+        "min": 0,
+        "max": 32,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      }
+    ]
   }
-]
+] 

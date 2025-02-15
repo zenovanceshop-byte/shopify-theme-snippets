@@ -1,0 +1,249 @@
+{% unless settings.ks_cart_upsells_collection == nil %}
+  {% liquid 
+    assign upsells_handles = ''
+  
+    for product in settings.ks_cart_upsells_collection.products
+      assign is_in_cart = false
+      for line_item in cart.items
+        if line_item.product.id == product.id
+          assign is_in_cart = true
+        endif
+      endfor
+      if is_in_cart == false and product.available
+        assign upsells_handles = upsells_handles | append: product.handle | append: ','
+      endif
+    endfor
+    
+    assign upsells_handles = upsells_handles | split: ','
+
+    assign count_upsells = upsells_handles.size
+    if count_upsells > settings.ks_cart_upsells_limit
+      assign count_upsells = settings.ks_cart_upsells_limit
+    endif
+  %}
+
+  {% unless upsells_handles == empty %}
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
+    {% style %}
+      cart-drawer-items {
+        display: flex;
+        flex-direction: column;
+      }
+      .ks-cart-upsells {
+        margin-bottom: 1rem;
+      }
+      .is-empty .ks-cart-upsells {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .ks-cart-upsells-title {
+        padding-bottom: 6px;
+        border-bottom: .1rem solid rgba(var(--color-foreground), .08);
+      }
+      .ks-cart-upsells .ks-slider-component-full .slider {
+        scroll-padding-left: 0 !important;
+      }
+      .ks-cart-upsells .ks-slider-component-full .slider .slider__slide:first-child {
+        margin-left: 0 !important;
+        scroll-margin-left: 0 !important;
+      }
+      .ks-cart-upsells .ks-slider-component-full .slider:after {
+        padding-left: 0 !important;
+      }
+      .ks-cart-upsells .ks-slider-component-full .slider-counter--total {
+        display: none;
+      }
+      .ks-cart-upsells .grid {
+        margin: 0 !important;
+      }
+      .ks-cart-upsells-item {
+        display: flex;
+        margin-bottom: 1rem;
+        box-sizing: content-box;
+      }
+      .ks-cart-upsells-item-image {
+        width: 34%;
+      }
+      .ks-cart-upsells-item-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .ks-cart-upsells-item-details {
+        padding-left: 1.5rem;
+        width: calc(66% - 1.75rem);
+      }
+      .ks-cart-upsells-item .cart-item__name {
+        margin: 0 0 1rem;
+      }
+      .ks-cart-upsells-item .price {
+        margin-bottom: 1.5rem;
+      }
+      .ks-cart-upsells-item .field-wrapper {
+        margin-bottom: 1rem;
+      }
+      .ks-cart-upsells-item .select__select {
+        font-size: .8em;
+      }
+      .ks-cart-upsells-item .select__select,
+      .ks-cart-upsells-item button {
+        line-height: normal;
+        min-height: auto;
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .ks-cart-upsells-item .select .svg-wrapper {
+        margin-right: 1rem;
+      }
+      .ks-cart-upsells-item button {
+        box-sizing: border-box;
+      }
+    {% endstyle %}
+
+    <script>
+      function ksCartUpsellsVariantChange (select, event) {
+        event.preventDefault()
+        
+        const imgSrc = select.options[select.selectedIndex].dataset.variantImg
+
+        if (imgSrc) {
+          const img = select.closest('.ks-cart-upsells-item').querySelector('.ks-cart-upsells-item-image img')
+          img.src = imgSrc
+        }
+      }
+    </script>
+    
+    <div 
+      id="ks-cart-upsells"
+      class="ks-cart-upsells">
+      <h3 
+        class="ks-cart-upsells-title {{ settings.ks_cart_upsells_title_font_size }}"
+        style="text-align: {{ settings.ks_cart_upsells_title_text_align }}">
+        <span>
+          {{ settings.ks_cart_upsells_title }}
+        </span>
+      </h3>
+      <slider-component class="slider-mobile-gutter slider-component-desktop ks-slider-component-full">
+        <ul
+          id="Slider-ks-cart-upsells"
+          data-id="{{ section.id }}"
+          class="grid grid--1-col slider slider--tablet slider--desktop"
+          role="list"
+          aria-label="{{ 'general.slider.name' | t }}">
+          {% for handle in upsells_handles limit: settings.ks_cart_upsells_limit %}
+            {% assign product = all_products[handle] %}
+            <li
+              id="Slide-ks-cart-upsells-{{ forloop.index }}"
+              class="grid__item slider__slide">
+              <div class="ks-cart-upsells-item">
+                <div class="ks-cart-upsells-item-image">
+                  <a href="{{ product.url }}" tabindex="-1"> 
+                    <img 
+                      src="{{ product.featured_image | image_url: width: 300 }}"
+                      class="img-fluid d-block" 
+                      alt="{{ product.featured_image.alt | escape }}" 
+                      width="150" 
+                      height="{{ 150 | divided_by: product.featured_image.aspect_ratio | ceil }}" 
+                      loading="lazy">
+                  </a>
+                </div>
+                <div class="ks-cart-upsells-item-details">
+                  <a href="{{ product.url }}" class="cart-item__name h4 break">
+                    {{ product.title }}
+                  </a>
+                  {% if product.has_only_default_variant %}
+                    {% render 'price', product: product %}
+                  {% endif %}
+                  <product-form data-section-id="ks-cart-upsells">
+                    {%- form 'product',
+                      product,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      {% if product.has_only_default_variant %}
+                        <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+                      {% else %}
+                        <div class="field-wrapper">
+                          <div class="select">
+                            <select 
+                              id="ks-cart-drawer-upsell-selector-{{ forloop.index }}"
+                              name="id"
+                              class="select__select"
+                              aria-label="Select variant"
+                              onclick="event.stopImmediatePropagation();" 
+                              onchange="ksCartUpsellsVariantChange(this, event); event.stopImmediatePropagation();">
+                              {% for variant in product.variants %}
+                                <option 
+                                  value="{{ variant.id }}"
+                                  data-variant-img="{% if variant.image %}{{ variant.image | image_url: width: 300 }}{% endif %}"
+                                  {% if variant.available == false %}disabled{% endif %}>
+                                  {{ variant.title }} -
+                                  {% if variant.available == false %}
+                                    {{ 'products.product.sold_out' | t }}
+                                  {% else %}
+                                    {{ variant.price | money }} 
+                                  {% endif %}
+                                </option>
+                              {% endfor %}
+                            </select>
+                            <span class="svg-wrapper">
+                              <svg class="icon icon-caret" viewBox="0 0 10 6"><path fill="currentColor" fill-rule="evenodd" d="M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708" clip-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </div>
+                      {% endif %}
+                      <button 
+                        type="submit" 
+                        name="add" 
+                        class="button button--full-width {{ settings.ks_cart_upsells_btn_style }}">
+                        <span>{{ 'products.product.add_to_cart' | t}}</span>
+                        {%- render 'loading-spinner' -%}
+                      </button>
+                    {% endform %}
+                  </product-form>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="slider-buttons">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}">
+            <span class="svg-wrapper">
+              <svg class="icon icon-caret" viewBox="0 0 10 6">
+                <path fill="currentColor" fill-rule="evenodd" d="M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708" clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total"></span>
+            <span class="slider-counter--total-fixed">{{ count_upsells }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}">
+            <span class="svg-wrapper">
+              <svg class="icon icon-caret" viewBox="0 0 10 6">
+                <path fill="currentColor" fill-rule="evenodd" d="M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708" clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </slider-component>
+    </div>
+  {% endunless %}
+{% endunless %}

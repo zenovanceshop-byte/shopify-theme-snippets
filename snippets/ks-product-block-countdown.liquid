@@ -1,0 +1,238 @@
+{% liquid 
+  # KS Coundown Sale
+  # © 2025 KondaSoft
+  # https://www.kondasoft.com
+%}
+
+{% liquid 
+  assign show_block = false
+
+  assign metafield_namespace = block.settings.metafield | split: '.' | first
+  assign metafield_key = block.settings.metafield | split: '.' | last
+  assign datetime = product.metafields[metafield_namespace][metafield_key].value
+  
+  unless datetime
+    assign datetime = block.settings.datetime
+  endunless
+
+  assign unixtime = datetime | date: '%s'
+  assign now = 'now' | date: '%s'
+
+  if unixtime > now
+    assign show_block = true
+  endif
+
+  if shop.permanent_domain contains 'ks-'
+    assign show_block = true
+  endif
+%}
+
+{%- style -%}
+  .ks-countdown-pdp-wrapper {
+    --color-background: {{ block.settings.background_color | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    --color-foreground: {{ block.settings.foreground_color | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    background-color: rgba(var(--color-background), 1);
+    color: rgba(var(--color-foreground), 1);
+    text-align: {{ block.settings.text_align }};
+    border-width: {{ block.settings.border_width }}px;
+    border-color: {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    border-style: solid;
+    max-width: 44rem;
+    position: relative;
+  }
+
+  .ks-countdown-pdp-inner {
+    padding: 16px;
+  }
+
+  .ks-countdown-pdp-text .title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: currentColor;
+  }
+
+  .ks-countdown-pdp-text .description {
+    margin: 0;
+    line-height: normal;
+    font-size: .9em;
+  }
+
+  .ks-countdown-pdp {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    gap: 6px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .2;
+    transition: all .2s ease-out;
+  }
+
+  .ks-countdown-pdp[data-init] {
+    opacity: 1;
+  }
+
+  .ks-countdown-pdp span {
+    background-color: {{ block.settings.countdown_bg_color }};
+    color: {{ block.settings.countdown_text_color }};
+    border-width: {{ block.settings.countdown_border_width }}px;
+    border-color: {{ block.settings.countdown_border_color }};
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50rem;
+    line-height: 1;
+  }
+
+  .ks-countdown-pdp span em {
+    display: block;
+    margin-bottom: .5rem;
+    opacity: 1;
+    font-style: normal;
+  }
+
+  .ks-countdown-pdp[data-animation="true"] span {
+    animation: ks_countdown_item 1s linear infinite alternate;
+    transform: translateY(-3px);
+  }
+
+  .ks-countdown-pdp[data-animation="true"] span:nth-child(2) { animation-delay: .5s; }
+  .ks-countdown-pdp[data-animation="true"] span:nth-child(3) { animation-delay: 1s; }
+  .ks-countdown-pdp[data-animation="true"] span:nth-child(4) { animation-delay: 1.5s; }
+
+
+  @keyframes ks_countdown_item {
+    from { transform: translateY(-3px); }
+    to { transform: translateY(3px); }
+  }
+
+  @media (max-width: 749px) {
+    .ks-countdown-pdp-wrapper {
+      margin-top: {{ block.settings.mt | times: 0.75 | round: 0 | append: 'px' }};
+      margin-bottom: {{ block.settings.mb | times: 0.75 | round: 0 | append: 'px' }};
+    }
+    .ks-countdown-pdp-inner {
+      padding-top: {{ block.settings.pt | times: 0.85 | round: 0 | append: 'px' }};
+      padding-bottom: {{ block.settings.pb | times: 0.85 | round: 0 | append: 'px' }};
+    }
+    .ks-countdown-pdp span {
+      width: {{ block.settings.countdown_font_size_mobile | times: 2 | append: 'px' }};
+      height: {{ block.settings.countdown_font_size_mobile | times: 2 | append: 'px' }};
+      font-size: {{ block.settings.countdown_font_size_mobile | append: 'px' }};
+    }
+    .ks-countdown-pdp span em {
+      font-size: 11px;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .ks-countdown-pdp-wrapper {
+      margin-top: {{ block.settings.mt | append: 'px' }};
+      margin-bottom: {{ block.settings.mb | append: 'px' }};
+    }
+    .ks-countdown-pdp-inner {
+      padding-top: {{ block.settings.pt | append: 'px' }};
+      padding-bottom: {{ block.settings.pb | append: 'px' }};
+    }
+    .ks-countdown-pdp span {
+      width: {{ block.settings.countdown_font_size_desktop | times: 2 | append: 'px' }};
+      height: {{ block.settings.countdown_font_size_desktop | times: 2 | append: 'px' }};
+      font-size: {{ block.settings.countdown_font_size_desktop | append: 'px' }};
+    }
+    .ks-countdown-pdp span em {
+      font-size: 13px;
+    }
+  }
+{%- endstyle -%}
+ 
+{% if show_block %}
+  <div 
+    id="ks-countdown-pdp-wrapper"
+    class="ks-countdown-pdp-wrapper"
+    {{ block.shopify_attributes }}>
+    <ks-countdown-pdp
+      class="ks-countdown-pdp"
+      data-time="{{ unixtime }}" 
+      data-text-days="{{ block.settings.text_days }}"
+      data-text-hours="{{ block.settings.text_hours }}"
+      data-text-min="{{ block.settings.text_minutes }}"
+      data-text-sec="{{ block.settings.text_seconds }}"
+      data-text-expired="{{ block.settings.text_expired }}"
+      data-animation="{% if block.settings.animation %}true{% else %}false{% endif %}"
+      role="timer">
+      <span data-days></span>
+      <span data-hours></span>
+      <span data-min></span>
+      <span data-sec></span>
+    </ks-countdown-pdp>
+    <div class="ks-countdown-pdp-inner">
+      <div class="ks-countdown-pdp-text">
+        {%- if block.settings.heading != blank -%}
+          <h3 class="title inline-richtext {{ block.settings.heading_size }}">
+            {{ block.settings.heading }}
+          </h3>
+        {%- endif -%}
+        {%- if block.settings.description != blank %}
+          <div class="description rte">
+            {{ block.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class KsCountdownPdp extends HTMLElement {
+      constructor () {
+        super()
+  
+        if (!this.dataset.time.length) {
+          this.innerHTML = 'Datetime is missing!'
+        }
+  
+        let countDownDate = Number(this.dataset.time) * 1000
+  
+        if (window.location.href.includes('ks-')) {
+          // countDownDate = Date.now() + 1.728e+8
+          countDownDate = Date.now() + 4.32e+7
+        }
+  
+        const x = setInterval(() => {
+          const now = new Date().getTime()
+          const distance = countDownDate - now
+  
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+          const min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+          const sec = Math.floor((distance % (1000 * 60)) / 1000)
+          
+          if (days > 0) {
+            this.querySelector('[data-days]').innerHTML = `${days} <em>${this.dataset.textDays}</em>`
+          } else {
+            this.querySelector('[data-days]')?.remove()
+          }
+          if (hours > 0) {
+            this.querySelector('[data-hours]').innerHTML = `${hours} <em>${this.dataset.textHours}</em>`
+          } else {
+            this.querySelector('[data-hours]')?.remove()
+          }
+          this.querySelector('[data-min]').innerHTML = `${min} <em>${this.dataset.textMin}</em>`
+          this.querySelector('[data-sec]').innerHTML = `${sec} <em>${this.dataset.textSec}</em>`
+          
+          this.setAttribute('data-init', '')
+
+          if (distance < 0) {
+            clearInterval(x)
+            this.innerHTML = this.dataset.textExpired
+          }
+        }, 1000)
+      }
+    }
+    customElements.define('ks-countdown-pdp', KsCountdownPdp)
+  </script>
+  
+{% endif %}

@@ -1,0 +1,324 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ks_fancy_slideshow_dpckpL": {
+      "type": "ks-fancy-slideshow",
+      "blocks": {
+        "slide_CDh4Aw": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/daniel-leone-v7daTKlZzaw-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/daniel-leone-v7daTKlZzaw-unsplash.jpg",
+            "video_mobile": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
+            "video_desktop": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Welcome to Fancy Slideshow",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_pdUENa": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "★ ★ ★ ★ ★",
+            "title": "Premium Shopify Themes Club",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_hyceGq": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Simple to Use, Easy To Customize",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_k9ACqB": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/img-after-3.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/img-after-3.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Best in class for customisations",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_CDh4Aw",
+        "slide_pdUENa",
+        "slide_hyceGq",
+        "slide_k9ACqB"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "foreground_color": "#ffffff",
+        "btn_bg_color": "#ffffff",
+        "btn_text_color": "#121212",
+        "slider_navigation": true,
+        "slider_pagination": "bullets",
+        "slider_effect": "slide",
+        "slider_speed": 700,
+        "slider_autoplay": 0,
+        "slider_partial": true,
+        "label": "Latest videos",
+        "media_mobile_height": 400,
+        "media_desktop_height": 700,
+        "media_adapt": false,
+        "pt": 12,
+        "pb": 12,
+        "slider_spacing": 12
+      }
+    },
+    "ks_fancy_slideshow_wfdDdr": {
+      "type": "ks-fancy-slideshow",
+      "blocks": {
+        "slide_CDh4Aw": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/daniel-leone-v7daTKlZzaw-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/daniel-leone-v7daTKlZzaw-unsplash.jpg",
+            "video_mobile": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
+            "video_desktop": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Welcome to Fancy Slideshow",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_pdUENa": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "★ ★ ★ ★ ★",
+            "title": "Premium Shopify Themes Club",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_hyceGq": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Simple to Use, Easy To Customize",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        },
+        "slide_k9ACqB": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify:\/\/shop_images\/img-after-3.jpg",
+            "img_desktop": "shopify:\/\/shop_images\/img-after-3.jpg",
+            "overlay_color": "#121212",
+            "overlay_opacity": 30,
+            "overlay_blur": 0,
+            "caption_position_mobile": "center",
+            "caption_text_align_mobile": "text-center",
+            "caption_position_desktop": "center",
+            "caption_text_align_desktop": "text-desktop-center",
+            "caption_max_width": "900",
+            "subtitle": "Developed by KondaSoft",
+            "title": "Best in class for customisations",
+            "title_font_size": "h1",
+            "description": "<p>Attract your customers' attention with a modern image\/video slideshow<\/p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_CDh4Aw",
+        "slide_pdUENa",
+        "slide_hyceGq",
+        "slide_k9ACqB"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "foreground_color": "#ffffff",
+        "btn_bg_color": "#ffffff",
+        "btn_text_color": "#121212",
+        "slider_navigation": true,
+        "slider_pagination": "bullets",
+        "slider_effect": "slide",
+        "slider_speed": 700,
+        "slider_autoplay": 5,
+        "slider_partial": true,
+        "label": "Promotional slideshow",
+        "media_mobile_height": 400,
+        "media_desktop_height": 700,
+        "media_adapt": false,
+        "pt": 36,
+        "pb": 36,
+        "slider_spacing": 16
+      }
+    },
+    "rich_text_hkjmLW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ieTkN9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_gGx9qF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "button_NFy9YJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ieTkN9",
+        "text_gGx9qF",
+        "button_NFy9YJ"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ks_fancy_slideshow_dpckpL",
+    "rich_text_hkjmLW",
+    "ks_fancy_slideshow_wfdDdr"
+  ]
+}

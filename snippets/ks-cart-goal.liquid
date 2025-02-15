@@ -1,0 +1,366 @@
+{% liquid 
+  # KS Cart Goal
+  # © 2025 KondaSoft
+  # https://www.kondasoft.com
+%}
+
+{% if settings.ks_cart_goal_goal_one_value contains cart.currency.iso_code %}
+  {% liquid
+    assign color = settings.ks_cart_goal_color.red | append: ', ' | append: settings.ks_cart_goal_color.green | append: ', ' | append: settings.ks_cart_goal_color.blue
+
+    if settings.ks_cart_goal_goal_three_value != blank
+      assign tiers_count = 3
+    elsif settings.ks_cart_goal_goal_two_value != blank
+      assign tiers_count = 2
+    else
+      assign tiers_count = 1
+    endif
+
+    assign goal_one_list = settings.ks_cart_goal_goal_one_value | split: ','
+    assign goal_two_list = settings.ks_cart_goal_goal_two_value | split: ','
+    assign goal_three_list = settings.ks_cart_goal_goal_three_value | split: ','
+
+    for item in goal_one_list
+      if item contains cart.currency.iso_code
+        assign goal_one = item | split: ':' | last | strip | times: 100
+      endif
+    endfor
+
+    for item in goal_two_list
+      if item contains cart.currency.iso_code
+        assign goal_two = item | split: ':' | last | strip | times: 100
+      endif
+    endfor
+
+    for item in goal_three_list
+      if item contains cart.currency.iso_code
+        assign goal_three = item | split: ':' | last | strip | times: 100
+      endif
+    endfor 
+
+    case tiers_count
+      when 1
+        if cart.total_price < goal_one
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_one | times: 1.0 | times: 100
+          assign goal_remaining_money = goal_one | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_one_desc | replace: '[amount]', goal_remaining_money
+        else
+          assign percentage = 100
+          assign description = settings.ks_cart_goal_desc_completed
+          assign goal_completed = 3
+        endif
+      when 2
+        if cart.total_price < goal_one
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_one | times: 0.5 | times: 100
+          assign goal_remaining_money = goal_one | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_one_desc | replace: '[amount]', goal_remaining_money
+        elsif cart.total_price < goal_two
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_two | times: 1.0 | times: 100
+          assign goal_remaining_money = goal_two | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_two_desc | replace: '[amount]', goal_remaining_money
+          assign goal_completed = 1
+        else
+          assign percentage = 100
+          assign description = settings.ks_cart_goal_desc_completed
+          assign goal_completed = 3
+        endif
+      when 3
+        if cart.total_price < goal_one
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_one | times: 0.33 | times: 100
+          assign goal_remaining_money = goal_one | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_one_desc | replace: '[amount]', goal_remaining_money
+        elsif cart.total_price < goal_two
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_two | times: 0.66 | times: 100
+          assign goal_remaining_money = goal_two | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_two_desc | replace: '[amount]', goal_remaining_money
+          assign goal_completed = 1
+        elsif cart.total_price < goal_three
+          assign percentage = cart.total_price | times: 1.0 | divided_by: goal_three | times: 1.00 | times: 100
+          assign goal_remaining_money = goal_three | minus: cart.total_price | money
+          assign description = settings.ks_cart_goal_goal_three_desc | replace: '[amount]', goal_remaining_money
+          assign goal_completed = 2
+        else
+          assign percentage = 100
+          assign description = settings.ks_cart_goal_desc_completed
+          assign goal_completed = 3
+        endif
+    endcase
+  %}
+
+  {% if settings.ks_cart_goal_confetti %}
+    <script 
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js" 
+      integrity="sha256-4QOrAnhDOdVsk8o96+LFopk3LK/FIVFI1VKD3gRuhtE=" 
+      crossorigin="anonymous"
+      defer>
+    </script>    
+  {% endif %}
+
+  {% style %}
+    body .drawer__header {
+      border-bottom: .1rem solid rgba(var(--color-foreground), .08);
+    }
+
+    body .drawer__heading {
+      margin: 0;
+    }
+
+    .ks-cart-goal {
+      --color: {{ color }};
+      display: block;
+      color: rgba(var(--color), 1);
+      text-align: center;
+      padding-top: {{ settings.ks_cart_goal_pt | append: 'px' }};
+      padding-bottom: {{ settings.ks_cart_goal_pb | append: 'px' }};
+    }
+
+    .is-empty .ks-cart-goal {
+      display: none;
+    }
+
+    .ks-cart-goal .description {
+      font-size: 14px;
+      line-height: normal;
+      margin: 0 0 12px;
+    }
+
+    .ks-cart-goal .bs-progress {
+      --bs-progress-height: {{ settings.ks_cart_goal_progress_height | append: 'px' }};
+      display: flex;
+      height: var(--bs-progress-height);
+      position: relative;
+      overflow: visible;
+      border-radius: 50rem;
+      background-color: rgba(var(--color), 0.05);
+    }
+
+    .ks-cart-goal .bs-progress-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      background-color: rgba(var(--color), 1);
+      text-align: center;
+      white-space: nowrap;
+      transition: width 0.6s ease;
+      border-radius: 50rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ks-cart-goal .bs-progress-bar {
+        transition: none;
+      }
+    }
+
+    .ks-cart-goal .bs-progress-bar-striped {
+      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+      background-size: var(--bs-progress-height) var(--bs-progress-height);
+    }
+
+    .ks-cart-goal .bs-progress-bar-animated {
+      animation: 1s linear infinite bs-progress-bar-stripes;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ks-cart-goal .bs-progress-bar-animated {
+        animation: none;
+      }
+    }
+
+    @keyframes bs-progress-bar-stripes {
+      0% { background-position-x: 1rem; }
+    }
+
+    .ks-cart-goal-icons {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .ks-cart-goal-icon {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+
+    .ks-cart-goal-icon > div {
+      width: 26px;
+      height: 26px;
+      transform: translateX(30%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(var(--color-background, 255, 255, 255), 1);
+      border: 1px solid currentColor;
+    }
+
+    .ks-cart-goal-icon:last-child > div {
+      transform: translateX(0);
+    }
+
+    .ks-cart-goal-icon.active > div {
+      color: currentColor;
+      background-color: currentColor;
+    }
+
+    .ks-cart-goal-icon.active svg {
+      color: white;
+      animation: ks_cart_goal_icon 1s linear alternate both infinite;
+    }
+
+    @keyframes ks_cart_goal_icon {
+      from { transform: translateX(-2px); }
+      to { transform: translateX(2px); }
+    }
+
+    #ks-cart-goal-confetti-canvas {
+      position: absolute;
+      z-index: 1;
+      width: calc(100% - 2rem);
+      height: 120px;
+    }
+
+  {% endstyle %}
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      class KsCartGoal extends HTMLElement {
+        constructor () {
+          super()
+
+          this.animateProgressBar()
+          this.initConfetti()
+        }
+      
+        animateProgressBar () {
+          const progressBar = this.querySelector('.bs-progress-bar')
+
+          setTimeout(() => {
+            progressBar.style.width = progressBar.dataset.width
+          }, 400)
+        }
+      
+        async initConfetti () {
+          if (this.dataset.showConfetti === 'false') return
+      
+          const goalCompleted = Number(this.dataset.goalCompleted)
+          const prevGoalCompleted = Number(localStorage.getItem('ks-cart-goal-completed') || 0)
+      
+          if (prevGoalCompleted !== goalCompleted) {
+            localStorage.setItem('ks-cart-goal-completed', goalCompleted)
+          }
+      
+          if (goalCompleted <= prevGoalCompleted) return
+      
+          const myCanvas = document.createElement('canvas')
+          myCanvas.setAttribute('id', 'ks-cart-goal-confetti-canvas')
+          document.querySelector('cart-drawer-items')?.insertAdjacentElement('afterbegin', myCanvas)
+      
+          const myConfetti = window.confetti.create(myCanvas)
+      
+          myConfetti({
+            particleCount: 400,
+            spread: 90
+          })
+      
+          setTimeout(() => {
+            myCanvas.remove()
+          }, 4000)
+        }
+      }
+      customElements.define('ks-cart-goal', KsCartGoal)
+    })
+  </script>
+
+  <ks-cart-goal 
+    class="ks-cart-goal"
+    data-no-of-tiers="{{ tiers_count }}"
+    data-goal-completed="{{ goal_completed | default: 0 }}"
+    data-show-confetti="{{ settings.ks_cart_goal_confetti }}">
+    <div class="description rte">
+      {{ description }}
+    </div>
+    <div class="bs-progress">
+      <div 
+        class="bs-progress-bar bs-progress-bar-animated bs-progress-bar-striped" 
+        role="progressbar" 
+        aria-valuenow="{{ cart.total_price | money }}" 
+        aria-valuemin="0"
+        aria-valuemax="{{ goal_value_three_with_cents | money }}"
+        data-width="{{ percentage }}%"
+        style="width: 0%;">
+      </div>
+      <div 
+        class="ks-cart-goal-icons" 
+        role="list"
+        aria-label="Cart offerings">
+        {% for n in (1..tiers_count) %}
+          {% liquid 
+            case n
+              when 1
+                assign icon = settings.ks_cart_goal_goal_one_icon
+                assign title = settings.ks_cart_goal_goal_one_title
+              when 2
+                assign icon = settings.ks_cart_goal_goal_two_icon
+                assign title = settings.ks_cart_goal_goal_two_title
+              when 3
+                assign icon = settings.ks_cart_goal_goal_three_icon
+                assign title = settings.ks_cart_goal_goal_three_title
+            endcase
+          %}
+          <div 
+            class="ks-cart-goal-icon {% if forloop.index <= goal_completed %}active{% endif %}"
+            aria-label="{{ title }}" 
+            role="listitem"
+            title="{{ title }}">
+            <div class="ks-cart-goal-icon-inner">
+              {% case icon %}
+                {% when 'award' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="kssvg-icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                {% when 'smile' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line>
+                  </svg>
+                {% when 'star' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                {% when 'percent' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle>
+                  </svg>
+                {% when 'truck' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                {% when 'gift' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                  </svg>
+                {% when 'heart' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                {% when 'cart' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ks-svg-icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="10" cy="20.5" r="1"></circle><circle cx="18" cy="20.5" r="1"></circle><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"></path>
+                  </svg>
+              {% endcase %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </ks-cart-goal>
+{% endif %}

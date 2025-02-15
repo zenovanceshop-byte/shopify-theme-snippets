@@ -640,6 +640,12 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+
+              {% comment %} KondaSoft {% endcomment %}
+                {%- when 'ks-countdown' -%}
+                  {% render 'ks-product-block-countdown', block: block %}
+              {% comment %} /KondaSoft {% endcomment %}
+
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -751,6 +757,238 @@
   "tag": "section",
   "class": "section",
   "blocks": [
+    {
+      "type": "ks-countdown",
+      "name": "KS - Countdown",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "NOTE: In case you need different timers for your products then you should use the metafield option. Also if the timer has expired this block will not show."
+        },
+        {
+          "type": "text",
+          "id": "datetime",
+          "label": "Datetime",
+          "default": "2026-01-01 00:00",
+          "info": "Format: yyyy-mm-dd hh:mm. NOTE: The date/time is based on the timezone specified in the Shopify general settings."
+        },
+        {
+          "type": "text",
+          "id": "metafield",
+          "label": "Metafield namespace\/key",
+          "default": "custom.countdown",
+          "info": "[Create the above metafield](https:\/\/shopify.com\/admin\/metafields\/product\/create) with the type of \"Date and time\" and then add the unix time for each of your products."
+        },
+        {
+          "type": "header",
+          "content": "Main styling"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "foreground_color",
+          "label": "Foreground color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "border_width",
+          "label": "Border width",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "label": "Border radius",
+          "min": 0,
+          "max": 16,
+          "step": 1,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "text_alignment",
+          "id": "text_align",
+          "label": "Text align",
+          "default": "center" 
+        },
+        {
+          "type": "header",
+          "content": "Countdown styling"
+        },
+        {
+          "type": "color",
+          "id": "countdown_bg_color",
+          "label": "Background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "countdown_text_color",
+          "label": "Text color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "countdown_border_width",
+          "label": "Border width",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "color",
+          "id": "countdown_border_color",
+          "label": "Border color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "countdown_font_size_mobile",
+          "label": "Font-size mobile",
+          "min": 20,
+          "max": 80,
+          "step": 2,
+          "default": 30,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "countdown_font_size_desktop",
+          "label": "Font-size desktop",
+          "min": 20,
+          "max": 80,
+          "step": 2,
+          "default": 36,
+          "unit": "px"
+        },
+        {
+          "type": "checkbox",
+          "id": "animation",
+          "label": "Animation",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Hurry up!"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            { "value": "h1", "label": "H1" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h4", "label": "H4" },
+            { "value": "h5", "label": "H5" },
+            { "value": "h6", "label": "H6" }
+          ],
+          "default": "h3",
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>This sale is going to end soon...</p>",
+          "info": "Leave empty to disable",
+          "label": "Description" 
+        },
+        {
+          "type": "header",
+          "content": "Spacing"
+        },
+        {
+          "type": "range",
+          "id": "pt",
+          "label": "Padding top",
+          "default": 48,
+          "min": 0,
+          "max": 64,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "pb",
+          "label": "Padding bottom",
+          "default": 16,
+          "min": 0,
+          "max": 64,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mt",
+          "label": "Margin top",
+          "default": 52,
+          "min": 0,
+          "max": 64,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mb",
+          "label": "Margin bottom",
+          "default": 20,
+          "min": 0,
+          "max": 64,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Translation"
+        },
+        {
+          "type": "text",
+          "id": "text_days",
+          "label": "Days",
+          "default": "Days"
+        },
+        {
+          "type": "text",
+          "id": "text_hours",
+          "label": "Hours",
+          "default": "Hours"
+        },
+        {
+          "type": "text",
+          "id": "text_minutes",
+          "label": "Minutes",
+          "default": "Mins"
+        },
+        {
+          "type": "text",
+          "id": "text_seconds",
+          "label": "Seconds",
+          "default": "Secs"
+        }
+      ]
+    },
     {
       "type": "@app"
     },
