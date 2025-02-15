@@ -7,47 +7,9 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "ks_dawn_store_locator_qqqaJz": {
-      "type": "ks-dawn-store-locator",
-      "settings": {
-        "color_scheme": "",
-        "container": true,
-        "heading": "Store Locator",
-        "heading_size": "h1",
-        "description": "<p>The follow map contains a list of Starbucks coffee locations.<br\/>NOTE: This is just for demo purposes and the data might not be accurate.<\/p>",
-        "map_token": "pk.eyJ1IjoiYWx2aW5rb25kYSIsImEiOiJjbHgxbDFhdzAwNTBsMmxzZXA4YzZkeDNrIn0.1f3X84WpPpkcN4MBjprdKQ",
-        "map_height_mobile": 500,
-        "map_height_desktop": 600,
-        "map_position": "-98.56, 39.81",
-        "map_style": "streets-v12",
-        "map_zoom": 4,
-        "geojson_file_name": "starbucks.geojson",
-        "controls_geocoder": true,
-        "controls_geocoder_countries": "us, ca",
-        "controls_fullscreen": true,
-        "controls_navigation": true,
-        "controls_geolocate": true,
-        "marker_img": "shopify:\/\/shop_images\/9004711_pin_location_marker_map_icon_6cb54474-bf98-4c03-9336-44336bb2c97b.png",
-        "marker_img_height": 32,
-        "clusters_base_bg_color": "#38bdf8",
-        "clusters_base_text_color": "#000000",
-        "clusters_tier_1": "50",
-        "clusters_tier_1_bg_color": "#4ade80",
-        "clusters_tier_2": "250",
-        "clusters_tier_2_bg_color": "#fb923c",
-        "popup_bg_color": "#ffffff",
-        "popup_text_color": "#121212",
-        "properties_title": "title",
-        "properties_address": "address",
-        "properties_phone": "phone",
-        "padding_top": 36,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
-    "main",
-    "ks_dawn_store_locator_qqqaJz"
+    "main"
   ]
 }

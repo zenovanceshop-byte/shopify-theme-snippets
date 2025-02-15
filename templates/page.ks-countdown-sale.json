@@ -1,4 +1,13 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
     "main": {
       "type": "main-page",
@@ -8,17 +17,19 @@
         "padding_bottom": 36
       }
     },
-    "e64cb587-50f8-4954-8cb0-a1e2bf983069": {
-      "type": "ks-dawn-countdown-sale",
+    "ks_countdown_sale_nJQgTy": {
+      "type": "ks-countdown-sale",
       "blocks": {
-        "template--21837764526386__e64cb587-50f8-4954-8cb0-a1e2bf983069-countdown-1": {
+        "countdown_DaLwAb": {
           "type": "countdown",
           "settings": {
-            "time": "1706959397",
-            "bg_color": "",
+            "datetime": "2026-01-01 00:00",
+            "bg_color": "#ffffff",
             "text_color": "#121212",
             "border_width": 2,
             "border_color": "#121212",
+            "font_size_mobile": 44,
+            "font_size_desktop": 64,
             "text_days": "Days",
             "text_minutes": "Minutes",
             "text_hours": "Hours",
@@ -26,79 +37,102 @@
             "text_expired": "Offer has expired!"
           }
         },
-        "template--21837764526386__e64cb587-50f8-4954-8cb0-a1e2bf983069-text-1": {
+        "text_FnWa3g": {
           "type": "text",
           "settings": {
+            "text_align_mobile": "center",
+            "text_align_desktop": "left",
             "heading": "Countdown Sale",
-            "heading_size": "h2",
-            "description": "<p>Use this section to showcase your offers that require a sense of urgency.<\/p>",
-            "button_label": "Shop now",
-            "button_link": "",
-            "button_style_secondary": false
+            "heading_size": "h1",
+            "description": "<p>Use this section to showcase your offers that require a sense of urgency.</p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary btn-primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary btn-secondary",
+            "btn_secondary_url": ""
           }
         }
       },
       "block_order": [
-        "template--21837764526386__e64cb587-50f8-4954-8cb0-a1e2bf983069-countdown-1",
-        "template--21837764526386__e64cb587-50f8-4954-8cb0-a1e2bf983069-text-1"
+        "countdown_DaLwAb",
+        "text_FnWa3g"
       ],
       "settings": {
-        "color_scheme": "background-2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "background_color": "#f6f6f6",
+        "foreground_color": "#121212",
+        "overlay_color": "#121212",
+        "overlay_opacity": 30,
+        "overlay_blur": 5,
+        "pt": 36,
+        "pb": 36
       }
     },
-    "e92309a7-2d9b-4dfc-a78e-926d35533204": {
-      "type": "ks-dawn-countdown-sale",
+    "ks_countdown_sale_9FGxPm": {
+      "type": "ks-countdown-sale",
       "blocks": {
-        "template--21837764526386__e92309a7-2d9b-4dfc-a78e-926d35533204-text-1": {
+        "text_Pmxa3w": {
           "type": "text",
           "settings": {
+            "text_align_mobile": "center",
+            "text_align_desktop": "right",
             "heading": "Countdown Sale",
-            "heading_size": "h2",
-            "description": "<p>Use this section to showcase your offers that require a sense of urgency.<\/p>",
-            "button_label": "Shop now",
-            "button_link": "",
-            "button_style_secondary": true
+            "heading_size": "h1",
+            "description": "<p>Use this section to showcase your offers that require a sense of urgency.</p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary btn-primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary btn-secondary",
+            "btn_secondary_url": ""
           }
         },
-        "template--21837764526386__e92309a7-2d9b-4dfc-a78e-926d35533204-countdown-1": {
+        "countdown_CJ64CP": {
           "type": "countdown",
           "settings": {
-            "time": "1706959397",
-            "bg_color": "#1773b0",
-            "text_color": "#ffffff",
-            "border_width": 2,
-            "border_color": "#1773b0",
-            "text_days": "Days",
-            "text_minutes": "Minutes",
-            "text_hours": "Hours",
-            "text_seconds": "Seconds",
-            "text_expired": "Offer has expired!"
-          }
-        }
-      },
-      "block_order": [
-        "template--21837764526386__e92309a7-2d9b-4dfc-a78e-926d35533204-text-1",
-        "template--21837764526386__e92309a7-2d9b-4dfc-a78e-926d35533204-countdown-1"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "843b335a-dc90-498c-af58-b6759e533e6d": {
-      "type": "ks-dawn-countdown-sale",
-      "blocks": {
-        "template--21837764526386__843b335a-dc90-498c-af58-b6759e533e6d-countdown-1": {
-          "type": "countdown",
-          "settings": {
-            "time": "1706959397",
+            "datetime": "2026-01-01 00:00",
             "bg_color": "",
             "text_color": "#ffffff",
-            "border_width": 6,
+            "border_width": 2,
             "border_color": "#ffffff",
+            "font_size_mobile": 44,
+            "font_size_desktop": 64,
+            "text_days": "Days",
+            "text_minutes": "Minutes",
+            "text_hours": "Hours",
+            "text_seconds": "Seconds",
+            "text_expired": "Offer has expired!"
+          }
+        }
+      },
+      "block_order": [
+        "text_Pmxa3w",
+        "countdown_CJ64CP"
+      ],
+      "settings": {
+        "background_color": "#121212",
+        "foreground_color": "#ffffff",
+        "image": "shopify://shop_images/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+        "overlay_color": "#121212",
+        "overlay_opacity": 50,
+        "overlay_blur": 0,
+        "pt": 36,
+        "pb": 36
+      }
+    },
+    "ks_countdown_sale_7gLW7E": {
+      "type": "ks-countdown-sale",
+      "blocks": {
+        "countdown_8cDMMj": {
+          "type": "countdown",
+          "settings": {
+            "datetime": "2026-01-01 00:00",
+            "bg_color": "#952f2f",
+            "text_color": "#fcf4f4",
+            "border_width": 0,
+            "border_color": "#ba2929",
+            "font_size_mobile": 80,
+            "font_size_desktop": 90,
             "text_days": "Days",
             "text_minutes": "Minutes",
             "text_hours": "Hours",
@@ -106,33 +140,43 @@
             "text_expired": "Offer has expired!"
           }
         },
-        "template--21837764526386__843b335a-dc90-498c-af58-b6759e533e6d-text-1": {
+        "text_HFwg3N": {
           "type": "text",
+          "disabled": true,
           "settings": {
+            "text_align_mobile": "center",
+            "text_align_desktop": "left",
             "heading": "Countdown Sale",
-            "heading_size": "h2",
-            "description": "<p>Use this section to showcase your offers that require a sense of urgency.<\/p>",
-            "button_label": "Shop now",
-            "button_link": "",
-            "button_style_secondary": false
+            "heading_size": "h1",
+            "description": "<p>Use this section to showcase your offers that require a sense of urgency.</p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary btn-primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary btn-secondary",
+            "btn_secondary_url": ""
           }
         }
       },
       "block_order": [
-        "template--21837764526386__843b335a-dc90-498c-af58-b6759e533e6d-countdown-1",
-        "template--21837764526386__843b335a-dc90-498c-af58-b6759e533e6d-text-1"
+        "countdown_8cDMMj",
+        "text_HFwg3N"
       ],
       "settings": {
-        "color_scheme": "inverse",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "background_color": "#fcf4f4",
+        "foreground_color": "#121212",
+        "overlay_color": "#121212",
+        "overlay_opacity": 30,
+        "overlay_blur": 0,
+        "pt": 100,
+        "pb": 100
       }
     }
   },
   "order": [
     "main",
-    "e64cb587-50f8-4954-8cb0-a1e2bf983069",
-    "e92309a7-2d9b-4dfc-a78e-926d35533204",
-    "843b335a-dc90-498c-af58-b6759e533e6d"
+    "ks_countdown_sale_nJQgTy",
+    "ks_countdown_sale_9FGxPm",
+    "ks_countdown_sale_7gLW7E"
   ]
 }

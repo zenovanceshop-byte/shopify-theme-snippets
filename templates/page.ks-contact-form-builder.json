@@ -9,8 +9,8 @@
       }
     },
     "20c7a8da-89a2-44e5-9ba0-3e9db59a4996": {
-      "type": "ks-dawn-contact-form-builder",
-      "blocks": {
+      "type": "ks-contact-form-builder",
+      "blocks": { 
         "template--21834473898290__20c7a8da-89a2-44e5-9ba0-3e9db59a4996-email-1": {
           "type": "email",
           "settings": {

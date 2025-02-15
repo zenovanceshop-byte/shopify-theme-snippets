@@ -142,35 +142,12 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
-    },
-    "ks_dawn_newsletter_popup_qABWg9": {
-      "type": "ks-dawn-newsletter-popup",
-      "settings": {
-        "config_delay": 5,
-        "config_days_to_wait": 3,
-        "image": "shopify:\/\/shop_images\/tamanna-rumee-hGLc8L-EcCM-unsplash.jpg",
-        "image_height": "300",
-        "heading": "Subscribe & get 10% off immediately!",
-        "heading_size": "h2",
-        "description": "<p>Be the first to know about our latest offers and other important stuff.<\/p>",
-        "note": "<p>By signing up for email, you agree to our <a href=\"\/policies\/terms-of-service\">Terms of Service<\/a> and <a href=\"\/policies\/privacy-policy\">Privacy Policy<\/a>.<\/p>",
-        "dialog_color_scheme": "",
-        "dialog_padding": 24,
-        "dialog_max_width": "560",
-        "dialog_text_align": "center",
-        "dialog_border_radius": 8,
-        "dialog_box_shadow": 20,
-        "backdrop_bg_color": "#000000",
-        "backdrop_bg_opacity": 60,
-        "backdrop_blur": 10
-      }
     }
   },
   "order": [
     "main",
     "image_with_text_fB7xm8",
     "rich_text_ybBzQh",
-    "image_banner_qVmkwC",
-    "ks_dawn_newsletter_popup_qABWg9"
+    "image_banner_qVmkwC"
   ]
 }

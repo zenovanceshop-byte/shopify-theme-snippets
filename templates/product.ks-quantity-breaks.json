@@ -1,4 +1,13 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
     "main": {
       "type": "main-product",
@@ -12,13 +21,11 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -29,8 +36,8 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "disabled": true,
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -41,8 +48,7 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
@@ -110,36 +116,36 @@
       }
     },
     "ks_dawn_quantity_breaks_gzUPQR": {
-      "type": "ks-dawn-quantity-breaks",
+      "type": "ks-quantity-breaks",
       "blocks": {
         "tier_qmbcXC": {
           "type": "tier",
           "settings": {
-            "qty": 2,
-            "discount": 10,
-            "title": "Buy [qty] -  [item_price]",
-            "subtitle": "Total price: [total_price]",
-            "badge": "Save [discount]"
-          }
+            "selected": false,
+            "qty": 1,
+            "discount": 0,
+            "title": "Buy 1",
+            "subtitle": "No savings"
+          } 
         },
         "tier_Xt8ABR": {
           "type": "tier",
           "settings": {
-            "qty": 3,
-            "discount": 20,
-            "title": "Buy [qty] -  [item_price]",
-            "subtitle": "Total price: [total_price]",
-            "badge": "Save [discount]"
+            "selected": true,
+            "qty": 2,
+            "discount": 10,
+            "title": "Buy 2 [Most popular]",
+            "subtitle": "You save: 10%"
           }
         },
         "tier_qpgwJR": {
           "type": "tier",
           "settings": {
-            "qty": 5,
-            "discount": 40,
-            "title": "Buy [qty] -  [item_price]",
-            "subtitle": "Total price: [total_price]",
-            "badge": "Save [discount]"
+            "selected": false,
+            "qty": 3,
+            "discount": 20,
+            "title": "Buy 3 [+ Free shipping]",
+            "subtitle": "You save: 20%"
           }
         }
       },
@@ -152,13 +158,13 @@
         "title": "Buy more & save up to 20%",
         "title_size": "h3",
         "title_text_align": "center",
-        "btn_animate": "animate__tada",
-        "item_border_opacity": 30,
+        "item_border_opacity": 20,
         "item_border_radius": 6,
-        "inject_element": "product-info .product-form__quantity",
+        "btn_animate": "animate__shakeX",
+        "inject_element": "product-info product-form",
         "inject_element_position": "beforebegin",
         "padding_top": 16,
-        "padding_bottom": 4
+        "padding_bottom": 0
       }
     }
   },

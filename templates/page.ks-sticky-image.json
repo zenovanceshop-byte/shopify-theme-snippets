@@ -63,64 +63,6 @@
         "padding_bottom": 36
       }
     },
-    "ks_sticky_image_7my4L6": {
-      "type": "ks-sticky-image",
-      "blocks": {
-        "slide_ejgnxR": {
-          "type": "slide",
-          "settings": {
-            "subtitle": "Developed by KondaSoft",
-            "title": "The Most Versatile Shopify Themes",
-            "description": "<p>Suitable only for Shopify stores that are aspiring for greatness.<\/p>",
-            "btn_primary_text": "Browse Themes",
-            "btn_primary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-themes",
-            "btn_secondary_text": "Browse Snippets",
-            "btn_secondary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-snippets"
-          }
-        },
-        "slide_EkChf7": {
-          "type": "slide",
-          "settings": {
-            "subtitle": "★ ★ ★ ★ ★",
-            "title": "The Most Dynamic Shopify Themes",
-            "description": "<p>Suitable only for Shopify stores that are aspiring for greatness.<\/p>",
-            "btn_primary_text": "Browse Themes",
-            "btn_primary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-themes",
-            "btn_secondary_text": "Browse Snippets",
-            "btn_secondary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-snippets"
-          }
-        },
-        "slide_tfd87P": {
-          "type": "slide",
-          "settings": {
-            "subtitle": "DESIGNED WITH ❤",
-            "title": "The Most Influential Shopify Themes",
-            "description": "<p>Suitable only for Shopify stores that are aspiring for greatness.<\/p>",
-            "btn_primary_text": "Browse Themes",
-            "btn_primary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-themes",
-            "btn_secondary_text": "Browse Snippets",
-            "btn_secondary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-snippets"
-          }
-        }
-      },
-      "block_order": [
-        "slide_ejgnxR",
-        "slide_EkChf7",
-        "slide_tfd87P"
-      ],
-      "settings": {
-        "img_mobile": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
-        "img_desktop": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
-        "overlay_color": "#121212",
-        "overlay_opacity": 30,
-        "overlay_blur": 0,
-        "caption_max_width": "900",
-        "caption_color": "#ffffff",
-        "title_font_size": "h1",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "multirow_NQYcbh": {
       "type": "multirow",
       "blocks": {
@@ -176,65 +118,6 @@
         "padding_bottom": 36
       }
     },
-    "ks_sticky_image_Ba33Kk": {
-      "type": "ks-sticky-image",
-      "blocks": {
-        "slide_tbqhpf": {
-          "type": "slide",
-          "settings": {
-            "subtitle": "Optional Subtitle",
-            "title": "Support for MP4 videos",
-            "description": "<p>An optional description for this slide<\/p>",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": ""
-          }
-        },
-        "slide_xJJcTC": {
-          "type": "slide",
-          "settings": {
-            "subtitle": "Optional Subtitle",
-            "title": "Slide Title",
-            "description": "<p>An optional description for this slide<\/p>",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": ""
-          }
-        },
-        "slide_QgLW4i": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "subtitle": "Optional Subtitle",
-            "title": "Slide Title",
-            "description": "<p>An optional description for this slide<\/p>",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tbqhpf",
-        "slide_xJJcTC",
-        "slide_QgLW4i"
-      ],
-      "settings": {
-        "video_mobile": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
-        "video_desktop": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
-        "overlay_color": "#121212",
-        "overlay_opacity": 30,
-        "overlay_blur": 0,
-        "caption_max_width": "900",
-        "caption_color": "#ffffff",
-        "title_font_size": "h1",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "multirow_73HPjz": {
       "type": "multirow",
       "blocks": {
@@ -288,59 +171,6 @@
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "ks_sticky_image_alt_nwWJHh": {
-      "type": "ks-sticky-image-alt",
-      "blocks": {
-        "primary_nzNVVK": {
-          "type": "primary",
-          "settings": {
-            "img_mobile": "shopify:\/\/shop_images\/manos-gkikas-pPA5ActWLLI-unsplash.jpg",
-            "img_desktop": "shopify:\/\/shop_images\/manos-gkikas-pPA5ActWLLI-unsplash.jpg",
-            "overlay_color": "#121212",
-            "overlay_opacity": 30,
-            "overlay_blur": 0,
-            "caption_max_width": "900",
-            "caption_color": "#ffffff",
-            "subtitle": "",
-            "title": "Welcome to KondaSoft",
-            "title_font_size": "h0",
-            "description": "",
-            "btn_primary_text": "",
-            "btn_primary_url": "",
-            "btn_secondary_text": "",
-            "btn_secondary_url": ""
-          }
-        },
-        "secondary_iH6yUK": {
-          "type": "secondary",
-          "settings": {
-            "img_mobile": "shopify:\/\/shop_images\/vlah-dumitru-FvmwloIbCeQ-unsplash.jpg",
-            "img_desktop": "shopify:\/\/shop_images\/vlah-dumitru-FvmwloIbCeQ-unsplash.jpg",
-            "overlay_color": "#121212",
-            "overlay_opacity": 60,
-            "overlay_blur": 0,
-            "caption_max_width": "900",
-            "caption_color": "#ffffff",
-            "subtitle": "★ ★ ★ ★ ★",
-            "title": "Show your main information here",
-            "title_font_size": "h1",
-            "description": "<p>An alternate style for this snippet. It works with 2 slides.<\/p>",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "primary_nzNVVK",
-        "secondary_iH6yUK"
-      ],
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "multirow_rTVbfr": {
@@ -402,11 +232,8 @@
   "order": [
     "main",
     "multirow_mjwBD7",
-    "ks_sticky_image_7my4L6",
     "multirow_NQYcbh",
-    "ks_sticky_image_Ba33Kk",
     "multirow_73HPjz",
-    "ks_sticky_image_alt_nwWJHh",
     "multirow_rTVbfr"
   ]
 }

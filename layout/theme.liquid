@@ -31,6 +31,10 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -252,6 +256,15 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+    {%- if settings.cart_type == 'drawer' -%}
+      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+      {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+      {{ 'component-price.css' | asset_url | stylesheet_tag }}
+      {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
@@ -283,26 +296,6 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-
-    <style>
-      @media (max-width: 749px) {
-        .banner .banner__media.banner__media-half {
-          width: 100%;
-        }
-        .banner  .banner__media.banner__media-half + .banner__media {
-          display: none;
-        }
-      }
-      @media (min-width: 750px) {
-        .banner .banner__media.banner__media-half {
-          width: 100%;
-          display: none;
-        }
-        .banner  .banner__media.banner__media-half + .banner__media {
-          display: block;
-        }
-      }
-    </style>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -374,6 +367,10 @@
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {%- if settings.cart_type == 'drawer' -%}
+      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
 </html>

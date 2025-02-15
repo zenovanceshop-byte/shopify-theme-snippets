@@ -12,13 +12,11 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -30,8 +28,7 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -42,8 +39,7 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
@@ -109,29 +105,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "ks_dawn_sticky_add_to_cart_6cAgWb": {
-      "type": "ks-dawn-sticky-add-to-cart",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "btn_style": ""
-      }
-    },
-    "ks_dawn_color_swatches_eFa7cL": {
-      "type": "ks-dawn-color-swatches",
-      "settings": {
-        "style": "custom",
-        "option_names": "Color, color, Colour, colour",
-        "img_size": 30,
-        "img_circle": true
-      }
     }
   },
   "order": [
     "main",
-    "related-products",
-    "ks_dawn_sticky_add_to_cart_6cAgWb",
-    "ks_dawn_color_swatches_eFa7cL"
+    "related-products"
   ]
 }

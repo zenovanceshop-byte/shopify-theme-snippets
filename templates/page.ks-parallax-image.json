@@ -8,39 +8,6 @@
         "padding_bottom": 36
       }
     },
-    "ks_dawn_parallax_image_hfeXt4": {
-      "type": "ks-dawn-parallax-image",
-      "settings": {
-        "mobile_image": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
-        "desktop_image": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "overlay_blur": 0,
-        "overlay_top_bottom_border": true,
-        "parallax_orientation": "up",
-        "parallax_scale": 1.2,
-        "color_scheme": "inverse",
-        "max_width": "700",
-        "text_align": "center",
-        "text_shadow": true,
-        "subtitle": "Developed by KondaSoft",
-        "heading": "KS Parallax Image",
-        "heading_size": "h1",
-        "description": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
-        "btn_primary_text": "Primary button",
-        "btn_primary_url": "",
-        "btn_primary_style": "button--primary",
-        "btn_secondary_text": "Secondary button",
-        "btn_secondary_url": "",
-        "btn_secondary_style": "button--secondary",
-        "pt_mobile": 100,
-        "pb_mobile": 100,
-        "pt_desktop": 200,
-        "pb_desktop": 200,
-        "mt": 0,
-        "mb": 0
-      }
-    },
     "rich_text_Wg36db": {
       "type": "rich-text",
       "blocks": {
@@ -83,39 +50,6 @@
         "padding_bottom": 84
       }
     },
-    "ks_dawn_parallax_image_LwaNGL": {
-      "type": "ks-dawn-parallax-image",
-      "settings": {
-        "mobile_image": "shopify:\/\/shop_images\/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
-        "desktop_image": "shopify:\/\/shop_images\/luca-micheli-ruWkmt3nU58-unsplash.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "overlay_blur": 5,
-        "overlay_top_bottom_border": true,
-        "parallax_orientation": "down left",
-        "parallax_scale": 1.5,
-        "color_scheme": "inverse",
-        "max_width": "700",
-        "text_align": "center",
-        "text_shadow": true,
-        "subtitle": "★ ★ ★ ★ ★",
-        "heading": "KS Parallax Image",
-        "heading_size": "h1",
-        "description": "<p>Different settings for parallax orientation\/scale, blurred image, etc<\/p>",
-        "btn_primary_text": "Primary button",
-        "btn_primary_url": "",
-        "btn_primary_style": "button--primary",
-        "btn_secondary_text": "Secondary button",
-        "btn_secondary_url": "",
-        "btn_secondary_style": "button--secondary",
-        "pt_mobile": 100,
-        "pb_mobile": 100,
-        "pt_desktop": 100,
-        "pb_desktop": 100,
-        "mt": 0,
-        "mb": 0
-      }
-    },
     "rich_text_EahNzr": {
       "type": "rich-text",
       "blocks": {
@@ -156,39 +90,6 @@
         "full_width": true,
         "padding_top": 72,
         "padding_bottom": 84
-      }
-    },
-    "ks_dawn_parallax_image_r3Dzix": {
-      "type": "ks-dawn-parallax-image",
-      "settings": {
-        "mobile_video": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
-        "desktop_video": "shopify:\/\/files\/videos\/20600550-hd_1920_1080_30fps.mp4",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "overlay_blur": 0,
-        "overlay_top_bottom_border": true,
-        "parallax_orientation": "up",
-        "parallax_scale": 1.2,
-        "color_scheme": "accent-1",
-        "max_width": "700",
-        "text_align": "center",
-        "text_shadow": true,
-        "subtitle": "Developed by KondaSoft",
-        "heading": "Support for MP4 Videos",
-        "heading_size": "h1",
-        "description": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
-        "btn_primary_text": "Primary button",
-        "btn_primary_url": "",
-        "btn_primary_style": "button--primary",
-        "btn_secondary_text": "Secondary button",
-        "btn_secondary_url": "",
-        "btn_secondary_style": "button--secondary",
-        "pt_mobile": 100,
-        "pb_mobile": 100,
-        "pt_desktop": 150,
-        "pb_desktop": 150,
-        "mt": 0,
-        "mb": 0
       }
     },
     "rich_text_jm4Nn3": {
@@ -236,11 +137,8 @@
   },
   "order": [
     "main",
-    "ks_dawn_parallax_image_hfeXt4",
     "rich_text_Wg36db",
-    "ks_dawn_parallax_image_LwaNGL",
     "rich_text_EahNzr",
-    "ks_dawn_parallax_image_r3Dzix",
     "rich_text_jm4Nn3"
   ]
 }
