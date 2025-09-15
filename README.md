@@ -33,25 +33,25 @@ All you have to do to install our snippets is to copy and paste the code found m
 23. KS Pricing Plans
 24. KS Fancy Slideshow
 25. KS Age Verification
-
-## Learn more / Download
-https://www.kondasoft.com/collections/shopify-snippets
+26. KS. Matrix Grid
+27. KS Animated Richtext
 
 ## Demo (Password: ks)
 https://ks-snippets.myshopify.com
 
-## YouTube video playlist
-Overview/Installation/Configuration for each snippet
+## Downloads
+https://github.com/kondasoft/shopify-theme-snippets/releases/tag/all-snippets
 
+## YouTube video playlist
 https://www.youtube.com/playlist?list=PLkahmWw6Mp_WU1VQcbJLcx-75Is8oU4LK
 
-## Shopify Themes
-In case you are interested in Premium and Free Shopify themes, please browse our Shopify themes.
+## Falcon Pro — The most advanced Shopify theme ever built!
+Take your Shopify store to the next level with **Falcon Pro**, our next-generation Shopify theme.
 
-https://www.kondasoft.com/collections/shopify-themes
+https://www.falcontheme.com
 
 ## Support
-Please submit a [new issue](https://github.com/kondasoft/ks-shopify-snippets/issues/new) in case you want to submit a bug or feature request. Additionally, you may use our [Community Forum](https://community.kondasoft.com/) for further help.
+Please submit a [new issue](https://github.com/kondasoft/ks-shopify-snippets/issues/new) in case you want to submit a bug or feature request.
 
 ## Copyright and license
 Copyright 2024 [kondasoft.com](https://www.kondasoft.com). Code released under the [MIT License](https://github.com/kondasoft/ks-shopify-snippets/blob/master/LICENSE).
