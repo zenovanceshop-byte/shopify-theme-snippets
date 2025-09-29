@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -46,15 +55,70 @@
         "menu_color_scheme": "background-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
+        "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "ks_countdown_sale_tynLd3": {
+      "type": "ks-countdown-sale",
+      "blocks": {
+        "countdown_maVPQx": {
+          "type": "countdown",
+          "settings": {
+            "datetime": "2026-01-01 00:00",
+            "bg_color": "",
+            "text_color": "#121212",
+            "border_width": 2,
+            "border_color": "#121212",
+            "font_size_mobile": 44,
+            "font_size_desktop": 64,
+            "animation": true,
+            "text_days": "Days",
+            "text_minutes": "Minutes",
+            "text_hours": "Hours",
+            "text_seconds": "Seconds",
+            "text_expired": "Offer has expired!"
+          }
+        },
+        "text_mQEcR8": {
+          "type": "text",
+          "settings": {
+            "text_align_mobile": "center",
+            "text_align_desktop": "left",
+            "heading": "Countdown Sale",
+            "heading_size": "h1",
+            "description": "<p>Use this section to showcase your offers that require a sense of urgency.</p>",
+            "btn_primary_text": "Primary button",
+            "btn_primary_style": "button--primary btn-primary",
+            "btn_primary_url": "",
+            "btn_secondary_text": "Secondary button",
+            "btn_secondary_style": "button--secondary btn-secondary",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "countdown_maVPQx",
+        "text_mQEcR8"
+      ],
+      "name": "KS - Countdown Sale",
+      "settings": {
+        "background_color": "#ffffff",
+        "foreground_color": "#121212",
+        "overlay_color": "#121212",
+        "overlay_opacity": 30,
+        "overlay_blur": 0,
+        "pt": 36,
+        "pb": 36
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "ks_countdown_sale_tynLd3"
   ]
 }
